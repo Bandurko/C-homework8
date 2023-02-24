@@ -27,23 +27,24 @@ WriteLine();
 if (columnsA != rowsB)
 {
     Console.WriteLine("Матрицы перемножить невозможно");
+    return;
 }
 
-int[,] arrayA = GetArrayA(rowsA, columnsA, 0, 10);
-int[,] arrayB = GetArrayB(rowsB, columnsB, 0, 10);
+int[,] arrayA = GetArray(rowsA, columnsA, 0, 10);
+int[,] arrayB = GetArray(rowsB, columnsB, 0, 10);
 
 Console.WriteLine("Матрица A:");
-PrintArrayA(arrayA);
+PrintArray(arrayA);
 WriteLine();
 
 Console.WriteLine("Матрица B:");
-PrintArrayB(arrayB);
+PrintArray(arrayB);
 WriteLine();
 
 int[,] arrayC = MatrixMultC(arrayA, arrayB);
 
 Console.WriteLine("Произведение матриц A и B (C = A * B):");
-PrintArrayB(arrayC);
+PrintArray(arrayC);
 
 int[,] MatrixMultC(int[,] a, int[,] b)
 {
@@ -63,21 +64,8 @@ int[,] MatrixMultC(int[,] a, int[,] b)
     return result;
 }
 
-void PrintArrayC(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Write($"{array[i, j]} ");
-        }
-        WriteLine();
-    }
-}
 
-
-
-int[,] GetArrayA(int m, int n, int min, int max)
+int[,] GetArray(int m, int n, int min, int max)
 {
     int[,] result = new int[m, n];
     for (int i = 0; i < m; i++)
@@ -91,34 +79,8 @@ int[,] GetArrayA(int m, int n, int min, int max)
     return result;
 }
 
-void PrintArrayA(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Write($"{array[i, j]} ");
-        }
-        WriteLine();
-    }
-}
 
-
-int[,] GetArrayB(int m, int n, int min, int max)
-{
-    int[,] result = new int[m, n];
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            result[i, j] = new Random().Next(min, max + 1);
-        }
-
-    }
-    return result;
-}
-
-void PrintArrayB(int[,] array)
+void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
