@@ -12,9 +12,9 @@ int N = int.Parse(ReadLine());
 
 PrintTriangle(N);
 
-double fact(int n)
+int fact(int n)
 {
-    double num = 1;
+    int num = 1;
     for (int i = 1; i <= n; i++)
     {
         num *= i;
