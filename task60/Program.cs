@@ -67,7 +67,7 @@ int[,,] GetArray(int x, int y, int z, int min, int max)
     return result;
 }
 
-
+// Метод поиска неповторяющихся элементов
 bool FindElement(int[,,] array, int el)
 {
     for (int i = 0; i < array.GetLength(0); i++)
